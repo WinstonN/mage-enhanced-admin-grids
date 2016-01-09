@@ -73,8 +73,8 @@ class BL_CustomGrid_Helper_Config extends Mage_Core_Helper_Abstract
     
     protected function _matchGridAgainstException($exception, $blockType, $rewritingClassName)
     {
-        return (preg_match($exception['block_type'], $blockType)
-            && preg_match($exception['rewriting_class_name'], $rewritingClassName));
+        return (strpos($exception['block_type'], $blockType)
+            && strpos($exception['rewriting_class_name'], $rewritingClassName));
     }
     
     public function addGridToExclusionsList($blockType, $rewritingClassName, $reinit=false)
